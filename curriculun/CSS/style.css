@@ -88,11 +88,12 @@ body {
   letter-spacing: 3px;
   color: #FFF;
   text-decoration: none;
-  transition: all .1s linear;
 }
 
 .box-ul ul li a:hover {
   background-color: #3B3B3B;
+  transition: all .3s linear;
+  text-shadow: var(--text-shadow-blue);
 }
 
 
