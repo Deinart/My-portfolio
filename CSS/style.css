@@ -21,16 +21,141 @@ body {
   background-color: #151515;
 }
 
-.inactive {
-  display: none;
-}
 
 /* ----------------- */
 /* Screen for mobile */
 /* ----------------- */
 
 @media screen and (max-width:767px) {
+  .bar-menu-tablet {
+    display: none;
+  }
+
+  .bar-menu-mobile {
+    display: block;
+  }
+
+  .bar-menu-mobile {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 520px;
+    height: 90px;
+    border-radius: 30px 30px 0 0;
+    z-index: 10;
+  }
+
+  .box-menu-button {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "bt1 bt2 bt3 bt4"; 
+  }
+
+  .box-menu-button button {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    border: none;
+    background: none;
+    transition: all .3s linear;
+  }
+
+  .box-menu-button .btn-1 {
+    fill: #FFF; 
+    &  p {
+      color: var(--color-blue);
+    }
+  }
+  .box-menu-button .btn-2 {
+    fill: #FFF; 
+    & p {
+      color: var(--color-orange);
+    }
+  }
+  .box-menu-button .btn-3 {
+    fill: #FFF; 
+    & p {
+      color: var(--color-green);
+    }
+  }
+  .box-menu-button .btn-4 {
+    stroke: #FFF;
+    & p {
+      color: var(--color-purple);
+    }
+  }
+
+  .box-menu-button .btn-1:hover {
+    fill: var(--color-blue); 
+    box-shadow: 0 10px 0 var(--color-blue);
+    transform: translateY(-10px);
+    & p {
+      transform: translate(-50%, -25px);
+    }
+  }
+  .box-menu-button .btn-2:hover {
+    fill: var(--color-orange); 
+    box-shadow: 0 10px 0 var(--color-orange);
+    transform: translateY(-10px);
+    & p {
+      transform: translate(-50%, -25px);
+
+    }
+  }
+  .box-menu-button .btn-3:hover {
+    fill: var(--color-green); 
+    box-shadow: 0 10px 0 var(--color-green);
+    transform: translateY(-10px);
+    & p {
+      transform: translate(-50%, -25px);
+
+    }
+  }
+  .box-menu-button .btn-4:hover {
+    stroke: var(--color-purple);
+    box-shadow: 0 10px 0 var(--color-purple);
+    transform: translateY(-10px);
+    & p {
+      transform: translate(-50%, -25px);
+
+    }
+  }
   
+  .box-menu-button .btn-1 svg {
+    border-radius: 25px 0 0 0
+  }
+
+  .box-menu-button .btn-4 svg {
+    border-radius: 0 25px 0 0
+  }
+
+  .box-menu-button button svg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 22px;
+    background-color: #252525;
+    z-index: 5;
+  }
+
+  .box-menu-button button p {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, 0);
+    font-size: 1.2rem;
+    font-weight: 900;
+    z-index: 3;
+    transition: all .1s linear;
+  }
 }
 
 /* ---------------- */
@@ -38,18 +163,26 @@ body {
 /* ---------------- */
 
 @media screen and (min-width:767px) and (max-width:1023px) {
-  .inactive {
+  .bar-menu-mobile {
+    display: none;
+  }
+
+  .bar-menu-tablet {
     display: block;
   }
 
-  .box-menu-tablet {
+  .bar-menu-tablet {
     position:fixed;
     z-index: 1;
   }
 
-  .box-menu-tablet.active {
+  .bar-menu-tablet.active {
     width: 100%;
     height: 100%;
+  }
+  
+  .toggle-menu.active {
+    clip-path: circle(150% at 0 0);
   }
 
   .toggle-menu {
@@ -59,11 +192,7 @@ body {
     background-color: #252525;
     z-index: 5;
     clip-path: circle(80px at 15px 10px);
-    transition: all .7s ease;
-  }
-
-  .toggle-menu.active {
-    clip-path: circle(150% at 0 0);
+    transition: all .5s linear;
   }
 
   .box-img {
@@ -102,28 +231,27 @@ body {
     animation: move-rigth .7s cubic-bezier(0, 0, 0.10, 1.15);
   }
 
-  .box-ul.active {
-    display: block;
+  .box-ul-tablet.active {
     animation: move-up 1.2s cubic-bezier(0, 0.24, 0.10, 1.15);
   }
 
-  .box-ul {
+  .box-ul-tablet {
     position: absolute;
     width: 100%;
     top: 35%;
   }
 
-  .box-ul ul li {
+  .box-ul-tablet ul li {
     width: 100%;
     list-style: none;
   }
 
-  .box-ul ul li a svg {
+  .box-ul-tablet ul li a svg {
     width: 35px;
     margin: 0 10px 0 0;
   }
 
-  .box-ul ul li a {
+  .box-ul-tablet ul li a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -136,13 +264,13 @@ body {
     transition: all .1s linear;
   }
 
-  .box-ul ul li .btn-blue {
+  .box-ul-tablet ul li .btn-blue {
     background-color: #252525;
     box-shadow: 0 0 0 var(--color-blue);
     fill: #FFF;
   }
 
-  .box-ul ul li .btn-blue:hover {
+  .box-ul-tablet ul li .btn-blue:hover {
     color: var(--color-blue);
     fill: var(--color-blue);
     box-shadow: -20px 0 0 var(--color-blue);
@@ -150,13 +278,13 @@ body {
     transition: all .2s linear;
   }
 
-  .box-ul ul li .btn-orange {
+  .box-ul-tablet ul li .btn-orange {
     background-color: #252525;
     box-shadow: 0 0 0 var(--color-orange);
     fill: #FFF;
   }
 
-  .box-ul ul li .btn-orange:hover {
+  .box-ul-tablet ul li .btn-orange:hover {
     color: var(--color-orange);
     fill: var(--color-orange);
     box-shadow: -20px 0 0 var(--color-orange);
@@ -164,13 +292,13 @@ body {
     transition: all .2s linear;
   }
 
-  .box-ul ul li .btn-green {
+  .box-ul-tablet ul li .btn-green {
     background-color: #252525;
     box-shadow: 0 0 0 var(--color-green);
     fill: #FFF;
   }
 
-  .box-ul ul li .btn-green:hover {
+  .box-ul-tablet ul li .btn-green:hover {
     color: var(--color-green);
     fill: var(--color-green);
     box-shadow: -20px 0 0 var(--color-green);
@@ -178,18 +306,27 @@ body {
     transition: all .2s linear;
   }
 
-  .box-ul ul li .btn-purple {
+  .box-ul-tablet ul li .btn-purple {
     background-color: #252525;
     box-shadow: 0 0 0 var(--color-purple);
     stroke: #FFF;
   }
 
-  .box-ul ul li .btn-purple:hover {
+  .box-ul-tablet ul li .btn-purple:hover {
     color: var(--color-purple);
     stroke: var(--color-purple);
     box-shadow: -20px 0 0 var(--color-purple);
     transform: translateX(20px);
     transition: all .2s linear;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .bar-menu-mobile {
+    display: none;
+  }
+  .bar-menu-tablet {
+    display: none;
   }
 }
 
