@@ -40,10 +40,10 @@ body {
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 0);
-    width: 520px;
+    width: 480px;
     height: 90px;
     border-radius: 30px 30px 0 0;
-    z-index: 10;
+    z-index: 100;
   }
 
   .box-menu-button {
@@ -64,31 +64,31 @@ body {
     height: 90px;
     border: none;
     background: none;
-    transition: all .3s linear;
+    transition: all .2s linear;
   }
 
   .box-menu-button .btn-1 {
     fill: #FFF; 
     &  p {
-      color: var(--color-blue);
+      color: #FFF;
     }
   }
   .box-menu-button .btn-2 {
     fill: #FFF; 
     & p {
-      color: var(--color-orange);
+      color: #FFF;
     }
   }
   .box-menu-button .btn-3 {
     fill: #FFF; 
     & p {
-      color: var(--color-green);
+      color: #FFF;
     }
   }
   .box-menu-button .btn-4 {
     stroke: #FFF;
     & p {
-      color: var(--color-purple);
+      color: #FFF;
     }
   }
 
@@ -98,6 +98,9 @@ body {
     transform: translateY(-10px);
     & p {
       transform: translate(-50%, -25px);
+      text-shadow: 0 0 10px var(--color-blue),
+                   0 0 20px var(--color-blue),
+                   0 0 30px var(--color-blue);
     }
   }
   .box-menu-button .btn-2:hover {
@@ -106,7 +109,9 @@ body {
     transform: translateY(-10px);
     & p {
       transform: translate(-50%, -25px);
-
+      text-shadow: 0 0 10px var(--color-orange),
+                   0 0 20px var(--color-orange),
+                   0 0 30px var(--color-orange);
     }
   }
   .box-menu-button .btn-3:hover {
@@ -115,7 +120,9 @@ body {
     transform: translateY(-10px);
     & p {
       transform: translate(-50%, -25px);
-
+      text-shadow: 0 0 10px var(--color-green),
+                   0 0 20px var(--color-green),
+                   0 0 30px var(--color-green);
     }
   }
   .box-menu-button .btn-4:hover {
@@ -124,7 +131,9 @@ body {
     transform: translateY(-10px);
     & p {
       transform: translate(-50%, -25px);
-
+      text-shadow: 0 0 10px var(--color-purple),
+                   0 0 20px var(--color-purple),
+                   0 0 30px var(--color-purple);
     }
   }
   
