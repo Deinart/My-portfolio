@@ -68,33 +68,21 @@ body {
   }
 
   .box-menu-button .btn-1 {
-    fill: #FFF; 
-    &  p {
-      color: #FFF;
-    }
+    fill: #FFF;
   }
   .box-menu-button .btn-2 {
-    fill: #FFF; 
-    & p {
-      color: #FFF;
-    }
+    fill: #FFF;
   }
   .box-menu-button .btn-3 {
-    fill: #FFF; 
-    & p {
-      color: #FFF;
-    }
+    fill: #FFF;
   }
   .box-menu-button .btn-4 {
     stroke: #FFF;
-    & p {
-      color: #FFF;
-    }
   }
 
   .box-menu-button .btn-1:hover {
     fill: var(--color-blue); 
-    box-shadow: 0 10px 0 var(--color-blue);
+    box-shadow: 0 100px 0 var(--color-blue);
     transform: translateY(-10px);
     & p {
       transform: translate(-50%, -25px);
@@ -105,7 +93,7 @@ body {
   }
   .box-menu-button .btn-2:hover {
     fill: var(--color-orange); 
-    box-shadow: 0 10px 0 var(--color-orange);
+    box-shadow: 0 100px 0 var(--color-orange);
     transform: translateY(-10px);
     & p {
       transform: translate(-50%, -25px);
@@ -116,7 +104,7 @@ body {
   }
   .box-menu-button .btn-3:hover {
     fill: var(--color-green); 
-    box-shadow: 0 10px 0 var(--color-green);
+    box-shadow: 0 100px 0 var(--color-green);
     transform: translateY(-10px);
     & p {
       transform: translate(-50%, -25px);
@@ -127,7 +115,7 @@ body {
   }
   .box-menu-button .btn-4:hover {
     stroke: var(--color-purple);
-    box-shadow: 0 10px 0 var(--color-purple);
+    box-shadow: 0 100px 0 var(--color-purple);
     transform: translateY(-10px);
     & p {
       transform: translate(-50%, -25px);
@@ -162,6 +150,7 @@ body {
     transform: translate(-50%, 0);
     font-size: 1.2rem;
     font-weight: 900;
+    color: #FFF;
     z-index: 3;
     transition: all .1s linear;
   }
