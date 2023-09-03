@@ -17,13 +17,14 @@
 
 body {
   font-size: 62.5%;
-  height: 1400px;
+  height: 100%;
   background-color: #0F0F0F;
 }
 
 main {
   width: 100%;
-  height: 100%;
+  height: 100vh; 
+  
 }
 
 /* ----------------- */
@@ -154,7 +155,7 @@ main {
     left: 50%;
     width: 100%;
     transform: translate(-50%, 0);
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 900;
     color: #FFF;
     z-index: 3;
@@ -162,13 +163,13 @@ main {
   }
 
   .presentation-box {
-    position: relative;
     width: 100%;
-    height: 850px;
+    height: 100%;
     background-image: url("/My-portfolio/assets/Backgrounds-screens/background-menu-mobile.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    overflow: hidden;
   }
 
   .presentation-content {
@@ -179,23 +180,29 @@ main {
     text-align: center;
     width: 100%;
     height: 100%;
-    animation: move-up 1.3s cubic-bezier(0.18, 0.16, 0.53, 1.15);
     & h1 {
       width: 90%;
-      padding: 15px;
       margin-bottom: 15px;
-      border-bottom: 3px solid #FFF;
-      font-size: 2.3rem;
+      font-size: 2rem;
       font-weight: 900;
       text-shadow: 0 0 15px var(--color-blue),
                    0 0 25px var(--color-blue),
                    0 0 30px var(--color-blue);
       color: #FFF;
+      animation: move-rigth 1.2s cubic-bezier(0.18, 0.16, 0.53, 1.15);
     } 
+    & span {
+      width: 90%;
+      border: 2px solid #FFF;
+      border-radius: 25px;
+      margin-bottom: 15px;
+      animation: toggleVisible 1s linear;
+    }
     & p {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: 300;
       color: #cecece;
+      animation: move-left 1.2s cubic-bezier(0.18, 0.16, 0.53, 1.15);
     }
   }
 }
@@ -373,9 +380,27 @@ main {
 /* animations */
 /* ---------- */
 
+@keyframes toggleVisible {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 90%;
+  }
+}
+
 @keyframes move-rigth {
   from {
     transform: translateX(-700px);
+  } 
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes move-left {
+  from {
+    transform: translateX(700px);
   } 
   to {
     transform: translateX(0px);
